@@ -1,0 +1,15 @@
+ion-content{
+    --background: url('../../assets/edit.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+ion-button {
+    --color: #000000; /* Establece el color del texto en blanco */
+    --background: #ffffff; /* Establece el color de fondo del botón */
+    --background-activated: #000000; /* Establece el color de fondo cuando se presiona el botón */
+  }
+  
+  ion-button:not([disabled]):active, ion-button:hover {
+    --color: #ffffff;
+    --background: #000000;
+  }

@@ -25,3 +25,19 @@
 #container a {
   text-decoration: none;
 }
+
+ion-item-sliding{
+  border-bottom: 1px solid rgba(235, 235, 235, 0.13);
+}
+
+ion-fab-button{
+  --color: #000000; /* Establece el color del texto en blanco */
+  --background: #ffffff; /* Establece el color de fondo del botón */
+  --background-activated: #000000; /* Establece el color de fondo cuando se presiona el botón */
+}
+
+ion-fab-button:hover{
+  --color: #ffffff; /* Establece el color del texto en blanco */
+  --background: #000000; /* Establece el color de fondo del botón */
+  
+}
