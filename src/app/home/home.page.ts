@@ -85,6 +85,29 @@ export class HomePage {
           })
           .then(() => {
             this.alumnoRecogido = true;
+            this.showToast('El acudiente ya llego al ' + this.selectedCarril);
+          })
+          .catch((error) => {
+            console.log('Error:', error);
+            this.showToast('Error al recoger al alumno');
+          });
+      }
+    });
+  }
+  async listo(id:string | undefined) {
+    this.afAuth.user.subscribe((user) => {
+      if (user) {
+        const userId = user.uid;
+        
+        this.firestore
+          .collection('posts')
+          .doc(id)
+          .update({
+            recogida: 'N',
+            carril: '',
+          })
+          .then(() => {
+            this.alumnoRecogido = true;
             this.showToast('Alumno recogido exitosamente');
           })
           .catch((error) => {
@@ -96,29 +119,29 @@ export class HomePage {
   }
   
 
-  async listo() {
-    this.afAuth.user.subscribe((user) => {
-      if (user) {
-        const userId = user.uid;
+  // async listo() {
+  //   this.afAuth.user.subscribe((user) => {
+  //     if (user) {
+  //       const userId = user.uid;
         
-        this.firestore
-          .collection('alumnos')
-          .doc(userId)
-          .update({
-            recogida: 'N',
-            carril: '',
-          })
-          .then(() => {
-            this.alumnoRecogido = false;
-            this.showToast('Alumno marcado como no recogido');
-          })
-          .catch((error) => {
-            console.log('Error:', error);
-            this.showToast('Error al marcar al alumno como no recogido');
-          });
-      }
-    });
-  }
+  //       this.firestore
+  //         .collection('alumnos')
+  //         .doc(userId)
+  //         .update({
+  //           recogida: 'N',
+  //           carril: '',
+  //         })
+  //         .then(() => {
+  //           this.alumnoRecogido = false;
+  //           this.showToast('Alumno marcado como no recogido');
+  //         })
+  //         .catch((error) => {
+  //           console.log('Error:', error);
+  //           this.showToast('Error al marcar al alumno como no recogido');
+  //         });
+  //     }
+  //   });
+  // }
   
         
         showToast(message: string) {

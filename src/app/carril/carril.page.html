@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Vista Colegio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card [ngStyle]="{ 'background': coloresCarriles.carril1}">
+          <ion-card-header class="carril">
+            Carril 1
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <ion-item *ngFor="let posts of alumnosCarril1">
+                {{ posts.title }}
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card [ngStyle]="{ 'background': coloresCarriles.carril2}">
+          <ion-card-header class="carril">
+            Carril 2
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <ion-item *ngFor="let posts of alumnosCarril2">
+                {{ posts.title }}
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card [ngStyle]="{ 'background': coloresCarriles.carril3}">
+          <ion-card-header class="carril">
+            Carril 3
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <ion-item *ngFor="let posts of alumnosCarril3">
+                {{ posts.title }}
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/home">
+      <ion-icon name="log-out"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+</ion-content>
