@@ -46,3 +46,40 @@
   </ion-list>
 
 </ion-content>
+
+
+<ion-content>
+  <ion-segment [(ngModel)]="segmentValue">
+    <ion-segment-button value="recoger">
+      Recoger
+    </ion-segment-button>
+  </ion-segment>
+
+
+  <ion-card *ngIf="segmentValue === 'recoger'">
+    <ion-card-header>
+      Recoger Alumno
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="full" *ngIf="posts && posts.length > 0" (click)="llegue(posts[0].id)">Llegué</ion-button>
+
+
+      <ion-radio-group [(ngModel)]="selectedCarril">
+        <ion-item>
+          <ion-label>Carril 1</ion-label>
+          <ion-radio slot="start" value="carril1"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Carril 2</ion-label>
+          <ion-radio slot="start" value="carril2"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Carril 3</ion-label>
+          <ion-radio slot="start" value="carril3"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+
+      <ion-button expand="full" *ngIf="alumnoRecogido" (click)="listo()">Listo</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
