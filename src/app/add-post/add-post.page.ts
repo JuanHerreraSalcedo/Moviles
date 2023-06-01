@@ -52,11 +52,11 @@ export class AddPostPage implements OnInit {
       this.showToast("Ingrese el título");
       return false;
     }
-    if (!this.post.title){
-      this.showToast("Ingrese la descripción");
+    if (!this.post.details){
+      this.showToast("Ingrese los detalles");
       return false;
     }
-    return true
+    return true;
   }
 
   showToast(message:string){
