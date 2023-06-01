@@ -8,11 +8,11 @@
 
 
 <ion-content [fullscreen]="true">
-  <ion-fab vertical="botton" horizontal="start" slot="fixed">
+  <!-- <ion-fab vertical="botton" horizontal="start" slot="fixed">
           <ion-fab-button (click)="signOut()">
         <ion-icon name="log-out"></ion-icon>
       </ion-fab-button>
-  </ion-fab>
+  </ion-fab> -->
 
   <ion-fab vertical="botton" horizontal="end" slot="fixed">
     <ion-fab-button [routerLink]="['/add-post']">
@@ -53,6 +53,9 @@
     <ion-segment-button value="recoger">
       Recoger
     </ion-segment-button>
+    <ion-segment-button routerLink="/carril">
+      Carriles
+    </ion-segment-button>
   </ion-segment>
 
 
@@ -62,8 +65,8 @@
     </ion-card-header>
     <ion-card-content>
       <ion-button expand="full" *ngIf="posts && posts.length > 0" (click)="llegue(posts[0].id)">Llegué</ion-button>
-
-
+      
+      
       <ion-radio-group [(ngModel)]="selectedCarril">
         <ion-item>
           <ion-label>Carril 1</ion-label>
@@ -78,8 +81,8 @@
           <ion-radio slot="start" value="carril3"></ion-radio>
         </ion-item>
       </ion-radio-group>
+      <ion-button expand="full" *ngIf="posts && posts.length > 0" (click)="listo(posts[0].id)">Listo</ion-button>
 
-      <ion-button expand="full" *ngIf="alumnoRecogido" (click)="listo()">Listo</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>
