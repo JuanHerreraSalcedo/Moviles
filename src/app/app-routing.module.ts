@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'edit-post/:id',
     loadChildren: () => import('./edit-post/edit-post.module').then( m => m.EditPostPageModule)
   },
+  {
+    path: 'carril',
+    loadChildren: () => import('./carril/carril.module').then( m => m.CarrilPageModule)
+  },
   
 ];
 
